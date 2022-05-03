@@ -33,3 +33,5 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 .env
+private
+_build

@@ -111,7 +111,8 @@ function build(){
         $baseDir/hook.before_pandoc.sh $buildDir/index.md
     fi
 
-    # build manual https://pandoc.org/MANUAL.html#extension-empty_paragraphs
+    # build office word
+    # manual https://pandoc.org/MANUAL.html#extension-empty_paragraphs
     set -x
     pandoc --from markdown+footnotes --wrap=none --reference-doc=$baseDir/../styles/default.docx -i index.md -o $buildDir/$baseDirname.docx
     if [ ! $? -eq 0 ]; then
@@ -120,6 +121,10 @@ function build(){
     fi
     set +x
 
+    # build html
+    # fix image path error
+    cd $buildDir
+    sed -i "s/(..\/assets\//(assets\//g" index.md
     pandoc --from markdown+footnotes --wrap=none --template=$baseDir/../styles/GitHub.html5 -i index.md -o $buildDir/$baseDirname.html
     if [ -f $buildDir/$baseDirname.html ]; then
         if [ ! -d $buildDir/../docs ]; then
