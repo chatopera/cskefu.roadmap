@@ -14,8 +14,19 @@ Add files, artifacts in `assets`.
 
 ## Build
 
+说明, [MANUAL](./MANUAL.md)
+
 * Build into Office Word
-[MANUAL](./MANUAL.md)
+
+```bash
+./scripts/build.word.sh
+```
+
+* Build into HTML
+
+```bash
+./scripts/build.html.sh
+```
 
 ## License
 

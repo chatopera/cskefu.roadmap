@@ -111,16 +111,6 @@ function build(){
         $baseDir/hook.before_pandoc.sh $buildDir/index.md
     fi
 
-    # build office word
-    # manual https://pandoc.org/MANUAL.html#extension-empty_paragraphs
-    set -x
-    pandoc --from markdown+footnotes --wrap=none --reference-doc=$baseDir/../styles/default.docx -i index.md -o $buildDir/$baseDirname.docx
-    if [ ! $? -eq 0 ]; then
-        echo "Pandoc exec error"
-        exit 3
-    fi
-    set +x
-
     # build html
     # fix image path error
     cd $buildDir

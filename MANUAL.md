@@ -12,16 +12,6 @@ Markdown to Word Document Template
 pip install -r requirements.txt
 ```
 
-## Build Office Word File
-
-```bash
-./scripts/build.sh
-```
-
-## Collect Ouput Files
-
-Copy works as final result into [dist](./dist/).
-
 ## Add a Cover
 
 Get cover samples in [assets/covers](./assets/covers/).
