@@ -115,7 +115,7 @@ function build(){
     # fix image path error
     cd $buildDir
     sed -i "s/(..\/assets\//(assets\//g" index.md
-    pandoc --from markdown+footnotes --wrap=none --template=$baseDir/../styles/GitHub.html5 -i index.md -o $buildDir/$baseDirname.html
+    pandoc --from markdown+footnotes --wrap=none --template=$baseDir/../styles/github.html5 -i index.md -o $buildDir/$baseDirname.html
     if [ -f $buildDir/$baseDirname.html ]; then
         if [ ! -d $buildDir/../docs ]; then
             mkdir -p $buildDir/../docs
@@ -130,17 +130,6 @@ function build(){
         exit 3
     fi
 
-    if [ -f $buildDir/$baseDirname.docx ]; then
-        echo "File generated in" $buildDir/$baseDirname.docx
-
-        # todo slim build folders
-        slim $baseDirname $BACKUP_DIR $KEEPED_BUILDS
-
-        # open file
-        open_file $buildDir/$baseDirname.docx
-    else
-        "Not found" $buildDir/$baseDirname.docx ", build failure."
-    fi
 }
 
 # main
