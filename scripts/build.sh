@@ -126,6 +126,10 @@ function build(){
             mkdir -p $buildDir/../docs
         fi
         cp $buildDir/$baseDirname.html $buildDir/../docs/index.html
+        if [ -d $buildDir/../docs/assets ]; then
+            rm -rf $buildDir/../docs/assets
+        fi
+        cp -rf  $buildDir/../assets $buildDir/../docs/assets
     else
         echo "Generate html failed."
         exit 3
