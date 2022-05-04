@@ -1,6 +1,10 @@
 # 春松客服开发者会议
 
-每周日上午 10 点开始，节假日除外。
+参会条件：面向春松客服开源社区成员公开，加入我们 <https://www.cskefu.com/join-us/>
+
+例会时间：每周日上午 10 点开始，节假日除外。
+
+会议纪要历史：[https://www.cskefu.com/category/conferences/](https://www.cskefu.com/category/conferences/)
 
 ## 会议地址
 
@@ -18,10 +22,9 @@
 
 ## 会议纪要模板
 
-[https://www.cskefu.com/category/conferences/](https://www.cskefu.com/category/conferences/)
-
 [创建会议纪要](https://www.cskefu.com/wp-admin/post-new.php)
 
+* 创建文章：[https://www.cskefu.com/wp-admin/post-new.php](https://www.cskefu.com/wp-admin/post-new.php)
 * 勾选【分类目录：开发者会议】
 * 标题：春松客服开发者会议 20yy-mm-dd
 * 正文内容模板
