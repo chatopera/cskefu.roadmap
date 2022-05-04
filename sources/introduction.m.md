@@ -1,6 +1,6 @@
 # 春松客服路线图
 
-规划以及更新状态，设定负责人，关联利益攸关方等 PM 工作。
+规划以及更新状态，设定负责人，关联利益攸关方等项目管理工作。
 
 <!-- BUILD_COMMIT_SHORT and BUILD_COMMIT_TS are resolved automatically -->
 

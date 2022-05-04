@@ -16,12 +16,12 @@ Start from `sources/index.m.md`, add `xxx.m.md` markdown files described in [mar
 
 Add files, artifacts in `assets`.
 
-## 注意事项
+# 注意事项
 
 * [docs](./docs) 文件夹会在 GitHub 自动更新为 GitHub pages, 以通过 CI 任务自动管理，不要手动管理该文件夹文件
 * 最大的节省流量，因为内容主要呈现在一个网页上：图片要不超过 100k，宽度不超过 1000px；图片格式宜使用 jpg
 
-## Build
+# 构建文档
 
 说明, [MANUAL](./MANUAL.md)
 
@@ -39,6 +39,6 @@ Add files, artifacts in `assets`.
 
 To disable the open docs action by default, touch `touch ~/.pandoc_build_not_open`.
 
-## License
+# License
 
 [Apache2](./LICENSE)
