@@ -118,8 +118,14 @@ SOFTWARE.
     2.3. <a href="#温馨提醒">温馨提醒</a><br />
     2.4. <a href="#邮件列表">邮件列表</a><br />
 3. <a href="#渠道管理">渠道管理</a><br />
-    3.1. <a href="#呼叫中心">呼叫中心</a><br />
-        3.1.1. <a href="#支持创建语音渠道">支持创建语音渠道</a><br />
+    3.1. <a href="#微信渠道">微信渠道</a><br />
+        3.1.1. <a href="#微信渠道简介">微信渠道简介</a><br />
+        3.1.2. <a href="#设计草图">设计草图</a><br />
+                3.1.2.0.1. <a href="#访客端">访客端</a><br />
+                3.1.2.0.2. <a href="#坐席端">坐席端</a><br />
+        3.1.3. <a href="#功能开发">功能开发</a><br />
+    3.2. <a href="#呼叫中心">呼叫中心</a><br />
+        3.2.1. <a href="#支持创建语音渠道">支持创建语音渠道</a><br />
 4. <a href="#坐席工作台">坐席工作台</a><br />
     4.1. <a href="#支持右侧面板中添加自定义的业务数据挂件">支持右侧面板中添加自定义的业务数据挂件</a><br />
         4.1.1. <a href="#描述">描述</a><br />
@@ -130,7 +136,7 @@ SOFTWARE.
 <p><a name="春松客服路线图"></a></p>
 <h2 id="春松客服路线图">1. 春松客服路线图</h2>
 <p>规划以及更新状态，设定负责人，关联利益攸关方等项目管理工作。</p>
-<!-- d48e470 and 2022-05-04 13:39:42 are resolved automatically -->
+<!-- 79c059f and 2022-05-04 17:05:54 are resolved automatically -->
 <table>
 <caption>Table 1.1 文档版本</caption>
 <colgroup>
@@ -151,8 +157,8 @@ SOFTWARE.
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://github.com/chatopera/cskefu.roadmap/commit/d48e470">d48e470</a></td>
-<td>2022-05-04 13:39:42</td>
+<td><a href="https://github.com/chatopera/cskefu.roadmap/commit/79c059f">79c059f</a></td>
+<td>2022-05-04 17:05:54</td>
 <td><a href="https://github.com/chatopera/cskefu.roadmap/commits/master">变更记录</a></td>
 <td><a href="https://chatopera.github.io/cskefu.roadmap/">地址</a></td>
 <td><a href="https://chatopera.github.io/cskefu.roadmap/assets/春松客服路线图.docx">地址</a></td>
@@ -198,11 +204,40 @@ SOFTWARE.
 <!-- 渠道 -->
 <p><a name="渠道管理"></a></p>
 <h2 id="渠道管理">3. 渠道管理</h2>
+<!-- 微信公众号 -->
+<p><a name="微信渠道"></a></p>
+<h3 id="微信渠道">3.1. 微信渠道</h3>
+<p><a name="微信渠道简介"></a></p>
+<h4 id="微信渠道简介">3.1.1. 微信渠道简介</h4>
+<p>春松客服作为多渠道开源客服系统，可以支持多种的 IM 渠道，比如 网页 WebIM、电话、微信、钉钉等。这里主要讨论将微信公众号和小程序作为一种IM渠道。 访客进入微信公众号或者微信小程序的聊天界面，可以给客服发送消息。消息将通过微信进入春松客服的<code>坐席工作台</code>，有对应的人工客服或机器人客服负责接待访客，客服只要专注在春松客服<code>坐席工作台</code>解答访客的疑问，方便快捷高效。</p>
+<p><a name="设计草图"></a></p>
+<h4 id="设计草图">3.1.2. 设计草图</h4>
+<p><a name="访客端"></a></p>
+<h6 id="访客端">3.1.2.0.1. 访客端</h6>
+<figure>
+<img src="assets/images/wechat-001-channels.png" alt="Figure 3.1" />
+<figcaption aria-hidden="true">Figure 3.1</figcaption>
+</figure>
+<p><a name="坐席端"></a></p>
+<h6 id="坐席端">3.1.2.0.2. 坐席端</h6>
+<figure>
+<img src="assets/images/wechat-002-channels.png" alt="Figure 3.2" />
+<figcaption aria-hidden="true">Figure 3.2</figcaption>
+</figure>
+<p><a name="功能开发"></a></p>
+<h4 id="功能开发">3.1.3. 功能开发</h4>
+<ul class="incremental">
+<li>微信公众号与春松客服打通，互相发送接收消息（富文本）。</li>
+<li>微信小程序客服渠道与春松客服打通，互相发送接收消息（富文本）。</li>
+<li>从微信渠道向春松客服发送消息，春松客服坐席工作台弹出弹屏幕和消息提醒。</li>
+<li>坐席工作台，坐席人员可以看到访客的基本信息（渠道信息、微信昵称）</li>
+</ul>
+<!-- 在此之上添加内容, https://stackoverflow.com/questions/16965490/pandoc-markdown-page-break -->
 <!-- 呼叫中心 -->
 <p><a name="呼叫中心"></a></p>
-<h3 id="呼叫中心">3.1. 呼叫中心</h3>
+<h3 id="呼叫中心">3.2. 呼叫中心</h3>
 <p><a name="支持创建语音渠道"></a></p>
-<h4 id="支持创建语音渠道">3.1.1. 支持创建语音渠道</h4>
+<h4 id="支持创建语音渠道">3.2.1. 支持创建语音渠道</h4>
 <!-- 在此之上添加内容, https://stackoverflow.com/questions/16965490/pandoc-markdown-page-break -->
 <!-- 在此之上添加内容, https://stackoverflow.com/questions/16965490/pandoc-markdown-page-break -->
 <!-- 坐席工作台 -->
