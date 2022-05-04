@@ -3,6 +3,8 @@
 
 <!-- 导语 -->
 !INCLUDE "./introduction.m.md",1
+<!-- 开发者会议 -->
+!INCLUDE "./developers_conference.m.md",1
 <!-- 渠道 -->
 !INCLUDE "./channels.m.md",1
 <!-- 坐席工作台 -->
