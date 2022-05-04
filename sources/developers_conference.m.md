@@ -27,75 +27,9 @@
 * 创建文章：[https://www.cskefu.com/wp-admin/post-new.php](https://www.cskefu.com/wp-admin/post-new.php)
 * 勾选【分类目录：开发者会议】
 * 标题：春松客服开发者会议 20yy-mm-dd
-* 正文内容模板
+* 正文内容模板 [RAW](https://raw.githubusercontent.com/chatopera/cskefu.roadmap/master/sources/tpls/weekly_conference.md)
 
-```
-## 会议议题
-春松客服路线图：[https://chatopera.github.io/cskefu.roadmap/](https://chatopera.github.io/cskefu.roadmap/)
-<!-- 一句话概述 -->
-
-## 参会者
-
-* 参与者1
-* 参与者2
-
-## 讨论
-<!-- 每个事项 -->
-### 事项1
-
-## 工作计划
-
-### 参与者1
-
-#### Done
-<!-- 完成任务  -->
-
-#### Todo
-<!-- 待办  -->
-
-#### Issue
-<!-- 需要协助事项  -->
-
-### 参与者2
-
-#### Done
-<!-- 完成任务  -->
-
-#### Todo
-<!-- 待办  -->
-
-#### Issue
-<!-- 需要协助事项  -->
-
-### 参与者3
-
-#### Done
-<!-- 完成任务  -->
-
-#### Todo
-<!-- 待办  -->
-
-#### Issue
-<!-- 需要协助事项  -->
-
-# 春松客服开发者会议
-
-每周日上午 10 点开始，节假日除外。
-
-## 会议地址
-
-[https://meeting.tencent.com/dm/r7m3uNJSsvLa](https://meeting.tencent.com/dm/r7m3uNJSsvLa) (录制，建议开启摄像头)
-
-腾讯会议：281-952-620
-
-手机一键拨号入会
-+8675536550000,,281952620# (中国大陆)
-+85230018898,,,2,281952620# (中国香港)
-
-根据您的位置拨号
-+8675536550000 (中国大陆)
-+85230018898 (中国香港)
-```
+<!-- !INCLUDECODE "tpls/weekly_conference.md" -->
 
 ## 温馨提醒
 
