@@ -2,8 +2,7 @@
 
 * 访问文档地址：[https://chatopera.github.io/cskefu.roadmap/](https://chatopera.github.io/cskefu.roadmap/)
 * [春松客服开发者会议](https://chatopera.github.io/cskefu.roadmap/#春松客服开发者会议)
-* [路线图文档更新](https://chatopera.github.io/cskefu.roadmap/#路线图文档更新)
-* [会议纪要模板](https://chatopera.github.io/cskefu.roadmap/#会议纪要模板)
+* [路线图文档更新](#路线图文档更新)
 
 # 路线图文档更新
 
