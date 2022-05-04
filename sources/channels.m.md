@@ -1,5 +1,8 @@
 # 渠道管理
 
+<!-- 微信公众号 -->
+!INCLUDE "./wechat.m.md",1
+
 <!-- 呼叫中心 -->
 !INCLUDE "./callcenter.m.md",1
 
