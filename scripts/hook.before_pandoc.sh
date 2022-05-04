@@ -12,8 +12,9 @@ export BACKUP_DIR=$baseDir/../tmp
 
 # functions
 
-function gen_datetime {
-  date "+%Y-%m-%d %H:%M:%S"
+function gen_date {
+#   date "+%Y-%m-%d %H:%M:%S"
+  date "+%Y-%m-%d"
 }
 
 # main 
@@ -40,7 +41,7 @@ fi
 
 cd $baseDir
 BUILD_COMMIT_SHORT=`git rev-parse --short HEAD`
-BUILD_COMMIT_TS=`gen_datetime`
+BUILD_COMMIT_TS=`gen_date`
 
 echo "Start to process file" $INPUT_FILE "..."
 cd $BACKUP_DIR
