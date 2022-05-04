@@ -19,6 +19,7 @@ Add files, artifacts in `assets`.
 ## 注意事项
 
 * [docs](./docs) 文件夹会在 GitHub 自动更新为 GitHub pages, 以通过 CI 任务自动管理，不要手动管理该文件夹文件
+* 最大的节省流量，因为内容主要呈现在一个网页上：图片要不超过 100k，宽度不超过 1000px；图片格式宜使用 jpg
 
 ## Build
 
@@ -27,14 +28,16 @@ Add files, artifacts in `assets`.
 * Build into Office Word
 
 ```bash
-./scripts/build.word.sh
+./scripts/docx.sh
 ```
 
 * Build into HTML
 
 ```bash
-./scripts/build.html.sh
+./scripts/html.sh
 ```
+
+To disable the open docs action by default, touch `touch ~/.pandoc_build_not_open`.
 
 ## License
 

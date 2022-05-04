@@ -12,6 +12,10 @@ export BACKUP_DIR=$baseDir/../tmp
 
 # functions
 
+function gen_datetime {
+  date "+%Y-%m-%d %H:%M:%S"
+}
+
 # main 
 [ -z "${BASH_SOURCE[0]}" -o "${BASH_SOURCE[0]}" = "$0" ] || return
 echo "Run hook before execute pandoc cmd ..."
@@ -34,6 +38,10 @@ if [ ! -d $BACKUP_DIR ]; then
     mkdir -p $BACKUP_DIR
 fi
 
+cd $baseDir
+BUILD_COMMIT_SHORT=`git rev-parse --short HEAD`
+BUILD_COMMIT_TS=`gen_datetime`
+
 echo "Start to process file" $INPUT_FILE "..."
 cd $BACKUP_DIR
 TMP_FILE=tmp.$TS.md
@@ -42,7 +50,8 @@ cp $INPUT_FILE tmp.$TS.md
 echo "Copy as temp file" $TMP_FILE "..."
 
 # define your actions, e.g.
-# sed -i "s/..\/..\/images\//..\/..\/..\/docfx_project\/images\//g" $TMP_FILE
+sed -i "s/BUILD_COMMIT_SHORT/$BUILD_COMMIT_SHORT/g" $TMP_FILE
+sed -i "s/BUILD_COMMIT_TS/$BUILD_COMMIT_TS/g" $TMP_FILE
 
 if [ $? -eq 0 ]; then
     cp $TMP_FILE $INPUT_FILE

@@ -128,7 +128,9 @@ function build(){
         slim $baseDirname $BACKUP_DIR $KEEPED_BUILDS
 
         # open file
-        open_file $buildDir/$baseDirname.docx
+        if [ ! -e ~/.pandoc_build_not_open ]; then
+            open_file $buildDir/$baseDirname.docx
+        fi
     else
         "Not found" $buildDir/$baseDirname.docx ", build failure."
     fi

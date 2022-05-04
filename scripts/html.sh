@@ -115,7 +115,7 @@ function build(){
     # fix image path error
     cd $buildDir
     sed -i "s/(..\/assets\//(assets\//g" index.md
-    pandoc --from markdown+footnotes --wrap=none --template=$baseDir/../styles/github.html5 -i index.md -o $buildDir/$baseDirname.html
+    pandoc --from markdown+footnotes --wrap=none --metadata title="路线图 | 春松客服" --template=$baseDir/../styles/github.html5 -i index.md -o $buildDir/$baseDirname.html
     if [ -f $buildDir/$baseDirname.html ]; then
         if [ ! -d $buildDir/../docs ]; then
             mkdir -p $buildDir/../docs
@@ -125,6 +125,16 @@ function build(){
             rm -rf $buildDir/../docs/assets
         fi
         cp -rf  $buildDir/../assets $buildDir/../docs/assets
+
+        # 生成 word
+        $baseDir/docx.sh
+        if [ -f $buildDir/$baseDirname.docx ]; then
+            cp $buildDir/$baseDirname.docx $buildDir/../docs/assets/春松客服路线图.docx
+        else
+            "Not found" $buildDir/$baseDirname.docx ", build failure."
+            exit 1
+        fi
+
     else
         echo "Generate html failed."
         exit 3
