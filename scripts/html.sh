@@ -153,4 +153,5 @@ if [ ! -d $BACKUP_DIR ]; then
     mkdir $BACKUP_DIR
 fi
 
+$baseDir/autocorrect.sh
 build $baseDir/..
