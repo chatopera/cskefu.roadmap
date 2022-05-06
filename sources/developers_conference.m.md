@@ -33,7 +33,7 @@
 
 ## 温馨提醒
 
-* 建议接入会议后修改参会人的姓名，也可以使用您在GitHub的 @GitHub_username
+* 建议接入会议后修改参会人的姓名，也可以使用您在 GitHub 的 @GitHub_username
 
 ## 邮件列表
 
@@ -41,7 +41,7 @@
 订阅后，发送消息到 dev@lists.cskefu.com 群发到所有订阅者，参与讨论。
 订阅后，回复本邮件，可对本次会议议题进行提交。
 
-<!-- 在此之上添加内容, https://stackoverflow.com/questions/16965490/pandoc-markdown-page-break -->
+<!-- 在此之上添加内容，https://stackoverflow.com/questions/16965490/pandoc-markdown-page-break -->
 ```{=openxml}
 <w:p>
   <w:r>

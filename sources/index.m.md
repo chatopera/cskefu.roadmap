@@ -9,7 +9,7 @@
 !INCLUDE "./channels.m.md",1
 <!-- 坐席工作台 -->
 !INCLUDE "./workspace.m.md",1
-<!-- 机器人客服, 知识库 -->
+<!-- 机器人客服，知识库 -->
 !INCLUDE "./bot.m.md",1
 <!-- 多语言 -->
 !INCLUDE "./multilingual.m.md",1
