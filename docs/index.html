@@ -120,10 +120,15 @@ SOFTWARE.
 3. <a href="#渠道管理">渠道管理</a><br />
     3.1. <a href="#微信渠道">微信渠道</a><br />
         3.1.1. <a href="#微信渠道简介">微信渠道简介</a><br />
-        3.1.2. <a href="#设计草图">设计草图</a><br />
-                3.1.2.0.1. <a href="#访客端">访客端</a><br />
-                3.1.2.0.2. <a href="#坐席端">坐席端</a><br />
-        3.1.3. <a href="#功能开发">功能开发</a><br />
+        3.1.2. <a href="#需求概述">需求概述</a><br />
+        3.1.3. <a href="#用户故事">用户故事</a><br />
+            3.1.3.1. <a href="#作为管理员，我可以创建微信渠道">作为管理员，我可以创建微信渠道</a><br />
+            3.1.3.2. <a href="#作为访客，我可以在微信公众号上发送消息联系客服">作为访客，我可以在微信公众号上发送消息联系客服</a><br />
+            3.1.3.3. <a href="#作为客服人员，我可以在客服工作台收到访客会话请求">作为客服人员，我可以在客服工作台收到访客会话请求</a><br />
+        3.1.4. <a href="#实现方案">实现方案</a><br />
+            3.1.4.1. <a href="#微信客服api">微信客服 API</a><br />
+                3.1.4.1.1. <a href="#微信客服提供哪些api">微信客服提供哪些 API</a><br />
+            3.1.4.2. <a href="#春松客服渠道接入">春松客服渠道接入</a><br />
     3.2. <a href="#呼叫中心">呼叫中心</a><br />
         3.2.1. <a href="#支持创建语音渠道">支持创建语音渠道</a><br />
 4. <a href="#坐席工作台">坐席工作台</a><br />
@@ -139,7 +144,7 @@ SOFTWARE.
 <p><a name="春松客服路线图"></a></p>
 <h2 id="春松客服路线图">1. 春松客服路线图</h2>
 <p>规划以及更新状态，设定负责人，关联利益攸关方等项目管理工作。</p>
-<!-- 602780e and 2022-05-07 19:51:39 are resolved automatically -->
+<!-- 6613333 and 2022-05-07 20:18:48 are resolved automatically -->
 <table>
 <caption>Table 1.1 文档版本</caption>
 <colgroup>
@@ -160,8 +165,8 @@ SOFTWARE.
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://github.com/chatopera/cskefu.roadmap/commit/602780e">602780e</a></td>
-<td>2022-05-07 19:51:39</td>
+<td><a href="https://github.com/chatopera/cskefu.roadmap/commit/6613333">6613333</a></td>
+<td>2022-05-07 20:18:48</td>
 <td><a href="https://github.com/chatopera/cskefu.roadmap/commits/master">变更记录</a></td>
 <td><a href="https://chatopera.github.io/cskefu.roadmap/">地址</a></td>
 <td><a href="https://chatopera.github.io/cskefu.roadmap/assets/春松客服路线图.docx">地址</a></td>
@@ -213,28 +218,51 @@ SOFTWARE.
 <p><a name="微信渠道简介"></a></p>
 <h4 id="微信渠道简介">3.1.1. 微信渠道简介</h4>
 <p>春松客服作为多渠道开源客服系统，可以支持多种的 IM 渠道，比如 网页 WebIM、电话、微信、钉钉等。这里主要讨论将微信公众号和小程序作为一种 IM 渠道。 访客进入微信公众号或者微信小程序的聊天界面，可以给客服发送消息。消息将通过微信进入春松客服的<code>坐席工作台</code>，有对应的人工客服或机器人客服负责接待访客，客服只要专注在春松客服<code>坐席工作台</code>解答访客的疑问，方便快捷高效。</p>
-<p><a name="设计草图"></a></p>
-<h4 id="设计草图">3.1.2. 设计草图</h4>
-<p><a name="访客端"></a></p>
-<h6 id="访客端">3.1.2.0.1. 访客端</h6>
-<figure>
-<img src="assets/images/wechat-001-channels.png" alt="Figure 3.1" />
-<figcaption aria-hidden="true">Figure 3.1</figcaption>
-</figure>
-<p><a name="坐席端"></a></p>
-<h6 id="坐席端">3.1.2.0.2. 坐席端</h6>
-<figure>
-<img src="assets/images/wechat-002-channels.png" alt="Figure 3.2" />
-<figcaption aria-hidden="true">Figure 3.2</figcaption>
-</figure>
-<p><a name="功能开发"></a></p>
-<h4 id="功能开发">3.1.3. 功能开发</h4>
+<p><a name="需求概述"></a></p>
+<h4 id="需求概述">3.1.2. 需求概述</h4>
 <ul class="incremental">
 <li>微信公众号与春松客服打通，互相发送接收消息（富文本）。</li>
 <li>微信小程序客服渠道与春松客服打通，互相发送接收消息（富文本）。</li>
 <li>从微信渠道向春松客服发送消息，春松客服坐席工作台弹出弹屏幕和消息提醒。</li>
 <li>坐席工作台，坐席人员可以看到访客的基本信息（渠道信息、微信昵称）</li>
 </ul>
+<p><a name="用户故事"></a></p>
+<h4 id="用户故事">3.1.3. 用户故事</h4>
+<p><a name="作为管理员，我可以创建微信渠道"></a></p>
+<h5 id="作为管理员我可以创建微信渠道">3.1.3.1. 作为管理员，我可以创建微信渠道</h5>
+<p>TODO，需要增加描述和示意图。</p>
+<p><a name="作为访客，我可以在微信公众号上发送消息联系客服"></a></p>
+<h5 id="作为访客我可以在微信公众号上发送消息联系客服">3.1.3.2. 作为访客，我可以在微信公众号上发送消息联系客服</h5>
+<figure>
+<img src="assets/images/wechat-001-channels.png" alt="Figure 3.1 访客界面" />
+<figcaption aria-hidden="true">Figure 3.1 访客界面</figcaption>
+</figure>
+<p><a name="作为客服人员，我可以在客服工作台收到访客会话请求"></a></p>
+<h5 id="作为客服人员我可以在客服工作台收到访客会话请求">3.1.3.3. 作为客服人员，我可以在客服工作台收到访客会话请求</h5>
+<figure>
+<img src="assets/images/wechat-002-channels.png" alt="Figure 3.2 坐席工作台" />
+<figcaption aria-hidden="true">Figure 3.2 坐席工作台</figcaption>
+</figure>
+<p><a name="实现方案"></a></p>
+<h4 id="实现方案">3.1.4. 实现方案</h4>
+<p><a name="微信客服api"></a></p>
+<h5 id="微信客服-api">3.1.4.1. 微信客服 API</h5>
+<p><a href="https://kf.weixin.qq.com/api/doc/path/93304" class="uri">https://kf.weixin.qq.com/api/doc/path/93304</a></p>
+<p>微信客服由腾讯微信团队为企业打造，用于满足企业的客服需求，帮助企业做好客户服务。企业可以在微信内、外各个场景中接入微信客服，用户可以发起咨询，企业可通过 API 来收发消息。</p>
+<p><a name="微信客服提供哪些api"></a></p>
+<h6 id="微信客服提供哪些-api">3.1.4.1.1. 微信客服提供哪些 API</h6>
+<p>开发者通过微信客服提供的相关 API，可实现通过 API 来管理微信客服帐号、收发客服消息，并可基于此定制丰富的客服管理功能，如实现接入客服机器人、自定义会话路由分配、统计客服数据等。</p>
+<p>具体的接口能力包括：</p>
+<ul class="incremental">
+<li>客服帐号管理</li>
+<li>客服消息收发</li>
+<li>客户基本信息获取</li>
+<li>在 App 或微信小程序里接入微信客服</li>
+<li>当用户进入微信客服会话或向微信客服发送消息时，企业将收到来自微信客服推送过来的事件或消息，开发者可依据自身业务逻辑进行响应。</li>
+</ul>
+<p><a name="春松客服渠道接入"></a></p>
+<h5 id="春松客服渠道接入">3.1.4.2. 春松客服渠道接入</h5>
+<p>参考春松客服网页渠道实现。</p>
 <!-- 在此之上添加内容，https://stackoverflow.com/questions/16965490/pandoc-markdown-page-break -->
 <!-- 呼叫中心 -->
 <p><a name="呼叫中心"></a></p>
