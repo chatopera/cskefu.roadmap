@@ -127,10 +127,11 @@ SOFTWARE.
     3.2. <a href="#呼叫中心">呼叫中心</a><br />
         3.2.1. <a href="#支持创建语音渠道">支持创建语音渠道</a><br />
 4. <a href="#坐席工作台">坐席工作台</a><br />
-    4.1. <a href="#功能概述">功能概述</a><br />
-    4.2. <a href="#功能说明">功能说明</a><br />
-        4.2.1. <a href="#业务数据配置">业务数据配置</a><br />
-        4.2.2. <a href="#业务数据展示">业务数据展示</a><br />
+    4.1. <a href="#支持自定义业务数据展示">支持自定义业务数据展示</a><br />
+        4.1.1. <a href="#功能概述">功能概述</a><br />
+        4.1.2. <a href="#功能说明">功能说明</a><br />
+            4.1.2.1. <a href="#业务数据配置">业务数据配置</a><br />
+            4.1.2.2. <a href="#业务数据展示">业务数据展示</a><br />
 5. <a href="#机器人客服">机器人客服</a><br />
     5.1. <a href="#支持人工坐席时，机器人外挂">支持人工坐席时，机器人外挂</a><br />
 6. <a href="#系统多语言">系统多语言</a></p>
@@ -138,7 +139,7 @@ SOFTWARE.
 <p><a name="春松客服路线图"></a></p>
 <h2 id="春松客服路线图">1. 春松客服路线图</h2>
 <p>规划以及更新状态，设定负责人，关联利益攸关方等项目管理工作。</p>
-<!-- e9f0101 and 2022-05-06 20:59:32 are resolved automatically -->
+<!-- 602780e and 2022-05-07 19:51:39 are resolved automatically -->
 <table>
 <caption>Table 1.1 文档版本</caption>
 <colgroup>
@@ -159,8 +160,8 @@ SOFTWARE.
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="https://github.com/chatopera/cskefu.roadmap/commit/e9f0101">e9f0101</a></td>
-<td>2022-05-06 20:59:32</td>
+<td><a href="https://github.com/chatopera/cskefu.roadmap/commit/602780e">602780e</a></td>
+<td>2022-05-07 19:51:39</td>
 <td><a href="https://github.com/chatopera/cskefu.roadmap/commits/master">变更记录</a></td>
 <td><a href="https://chatopera.github.io/cskefu.roadmap/">地址</a></td>
 <td><a href="https://chatopera.github.io/cskefu.roadmap/assets/春松客服路线图.docx">地址</a></td>
@@ -245,13 +246,15 @@ SOFTWARE.
 <!-- 坐席工作台 -->
 <p><a name="坐席工作台"></a></p>
 <h2 id="坐席工作台">4. 坐席工作台</h2>
+<p><a name="支持自定义业务数据展示"></a></p>
+<h3 id="支持自定义业务数据展示">4.1. 支持自定义业务数据展示</h3>
 <p><a name="功能概述"></a></p>
-<h3 id="功能概述">4.1. 功能概述</h3>
+<h4 id="功能概述">4.1.1. 功能概述</h4>
 <p>系统管理员在业务数据配置功能中，配置好要展示的业务数据的请求信息，以 http 请求向业务系统请求业务数据。请求的结果以自义 UI 的方式展示在客服对话窗口右侧面板中</p>
 <p><a name="功能说明"></a></p>
-<h3 id="功能说明">4.2. 功能说明</h3>
+<h4 id="功能说明">4.1.2. 功能说明</h4>
 <p><a name="业务数据配置"></a></p>
-<h4 id="业务数据配置">4.2.1. 业务数据配置</h4>
+<h5 id="业务数据配置">4.1.2.1. 业务数据配置</h5>
 <p>全局配置：</p>
 <ul class="incremental">
 <li>认证方式：Token 认证或密码认证，用于在请求接口数据时鉴权</li>
@@ -273,7 +276,7 @@ SOFTWARE.
 <li>预揽</li>
 </ol>
 <p><a name="业务数据展示"></a></p>
-<h4 id="业务数据展示">4.2.2. 业务数据展示</h4>
+<h5 id="业务数据展示">4.1.2.2. 业务数据展示</h5>
 <p>展示位置：客服对话窗口右侧面板</p>
 <p>展示时机：打开对话窗口时，展示对方在业务系统中的数据</p>
 <p>数据如何获取：在客服系统中存储客服系统的客户 ID 和业务系统的客户 ID 的关联关系，打开对话窗口时，将业务系统的客户 ID 携带在 http 请求中，向业务系统请求所需的业务数据</p>
