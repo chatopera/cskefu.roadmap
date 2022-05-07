@@ -40,4 +40,4 @@
 
 展示效果：
 
-![order.png](images/order.png)
+![order.png](../assets/images/order.png)
